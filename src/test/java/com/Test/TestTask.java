@@ -18,7 +18,7 @@ public class TestTask {
 		// Browser Open
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver=new ChromeDriver();
-		driver.get("https://dev2.mazetec.io/");
+		driver.get("url");
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().window().maximize();
 		
@@ -48,6 +48,9 @@ public class TestTask {
 	    WebElement btn_update=driver.findElement(By.xpath("//button[text()='Update']"));
 	    js.executeScript("arguments[0].scrollIntoView()", btn_update);
 		
+	    btn_update.click();
+	    
+	    driver.close();
 		
 		
 	}
